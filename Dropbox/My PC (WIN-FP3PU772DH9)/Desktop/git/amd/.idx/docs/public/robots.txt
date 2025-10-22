@@ -1,0 +1,7 @@
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# A robot should access the sitemap file to find out which pages are available for crawling.
+Sitemap: /sitemap.xml
+
+User-agent: *
+Allow: /
