@@ -17,12 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold text-white mb-4">
-              AMD
+            <div className="font-headline text-2xl font-bold text-white mb-4">
+              A.M.D
             </div>
-            <p className="text-gray-400 mb-4">
-              מערכת אבחון רפואי מתקדמת המבוססת על טכנולוגיה חדשנית 
-              וניסיון רפואי עשיר לספק תוצאות מדויקות ומהירות.
+            <p className="font-body text-gray-400 mb-4">
+              ארכיב דיגיטלי - מעבירים את הניירת שלך לעידן הדיגיטלי. 
+              שירותי סריקה, ארגון ואחסון מסמכים מקצועיים.
             </p>
             <div className="flex space-x-4 space-x-reverse">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
@@ -42,26 +42,36 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">קישורים מהירים</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-gray-400 hover:text-white transition-colors">
-                  בית
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-                  אודות
-                </a>
-              </li>
+            <h3 className="font-headline text-lg font-semibold mb-4">קישורים</h3>
+            <ul className="space-y-2 font-body">
               <li>
                 <a href="#services" className="text-gray-400 hover:text-white transition-colors">
                   שירותים
                 </a>
               </li>
               <li>
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                  אודותינו
+                </a>
+              </li>
+              <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                  צור קשר
+                  צרו קשר
+                </a>
+              </li>
+              <li>
+                <a href="/accessibility" className="text-gray-400 hover:text-white transition-colors">
+                  הצהרת נגישות
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                  מדיניות פרטיות
+                </a>
+              </li>
+              <li>
+                <a href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+                  תנאי שימוש
                 </a>
               </li>
             </ul>
@@ -69,26 +79,21 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">שירותים</h3>
-            <ul className="space-y-2">
+            <h3 className="font-headline text-lg font-semibold mb-4">שירותים</h3>
+            <ul className="space-y-2 font-body">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  אבחון כללי
+                  סריקת מסמכים
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  נוירולוגיה
+                  ארגון דיגיטלי
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  קרדיולוגיה
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  רפואת עיניים
+                  אחסון בענן
                 </a>
               </li>
             </ul>
@@ -96,53 +101,39 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">צור קשר</h3>
-            <div className="space-y-3">
+            <h3 className="font-headline text-lg font-semibold mb-4">צרו קשר</h3>
+            <div className="space-y-3 font-body">
               <div className="flex items-center space-x-3 space-x-reverse">
                 <Phone className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-400">03-1234567</span>
+                <span className="text-gray-400">054-1234567</span>
               </div>
               <div className="flex items-center space-x-3 space-x-reverse">
                 <Mail className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-400">info@amd.co.il</span>
+                <span className="text-gray-400">info@amd-archive.co.il</span>
               </div>
               <div className="flex items-start space-x-3 space-x-reverse">
                 <MapPin className="h-5 w-5 text-primary-400 mt-1" />
-                <span className="text-gray-400">רחוב הרפואה 123<br />תל אביב, ישראל</span>
+                <span className="text-gray-400">ישראל</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="max-w-md mx-auto text-center">
-            <h3 className="text-lg font-semibold mb-4">הירשמו לניוזלטר</h3>
-            <p className="text-gray-400 mb-4">
-              קבלו עדכונים על שירותים חדשים וטיפים רפואיים
-            </p>
-            <div className="flex space-x-2 space-x-reverse">
-              <Input 
-                type="email" 
-                placeholder="הכנסו את האימייל שלכם"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-              />
-              <Button className="bg-primary-600 hover:bg-primary-700">
-                הירשמו
-              </Button>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 AMD. כל הזכויות שמורות. | 
-            <a href="#" className="hover:text-white mr-2">מדיניות פרטיות</a> |
-            <a href="#" className="hover:text-white mr-2">תנאי שימוש</a>
+          <p className="font-body text-gray-400">
+            © 2025 A.M.D. כל הזכויות שמורות
           </p>
+          <div className="mt-2 space-x-4 space-x-reverse">
+            <a href="/accessibility" className="font-body text-gray-400 hover:text-white">הצהרת נגישות</a>
+            <span className="text-gray-600">|</span>
+            <a href="/privacy-policy" className="font-body text-gray-400 hover:text-white">מדיניות פרטיות</a>
+            <span className="text-gray-600">|</span>
+            <a href="/terms-of-service" className="font-body text-gray-400 hover:text-white">תנאי שימוש</a>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
