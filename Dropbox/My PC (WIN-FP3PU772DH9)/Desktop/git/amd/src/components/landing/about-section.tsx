@@ -26,10 +26,10 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-4">
+        <div className="text-center mb-8">
+          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-3">
             אודות AMD
           </h2>
           <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto">
@@ -56,7 +56,7 @@ export default function AboutSection() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
             <h3 className="font-headline text-2xl font-bold text-blue-600 mb-4">
               למה לבחור ב-AMD?

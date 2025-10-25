@@ -28,10 +28,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pt-8 pb-0 bg-gray-50">
+    <section id="contact" className="pt-12 pb-0 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0">
-        <div className="text-center mb-3">
-          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-1.5">
+        <div className="text-center mb-8">
+          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-3">
             צרו קשר
           </h2>
           <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto">
