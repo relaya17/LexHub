@@ -13,15 +13,15 @@ export function HeroSection({ t }: HeroSectionProps) {
     return (
         <section id="home" className="py-20 md:py-32 bg-card">
             <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center md:text-start space-y-6">
+                <div className="text-center md:text-right space-y-6">
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold font-headline text-primary leading-tight mb-4">
+                        <h1 className="text-5xl md:text-7xl font-extrabold font-headline text-blue-600 leading-tight mb-6">
                             {t.slogan}
                         </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg mx-auto md:mx-0">
+                        <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto md:mx-0 font-medium">
                             {t.services.s3}
                         </p>
-                        <Button size="lg" asChild>
+                        <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold">
                             <a href="/#contact" className="group">
                                 {t.get_quote}
                                 <ArrowLeft className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform" />
