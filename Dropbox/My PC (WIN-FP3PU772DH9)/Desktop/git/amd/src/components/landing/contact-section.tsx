@@ -41,7 +41,7 @@ export default function ContactSection() {
 
         <div className="max-w-2xl mx-auto mb-0 pb-0">
           {/* Contact Form */}
-          <Card className="mb-0 pb-0">
+          <Card className="mb-0 pb-0 border-b-0">
             <CardHeader className="pb-1">
               <CardTitle className="font-headline text-2xl font-bold text-gray-900">
                 שלח לנו הודעה
