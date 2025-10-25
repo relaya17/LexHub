@@ -42,13 +42,13 @@ export default function ContactSection() {
         <div className="max-w-2xl mx-auto mb-0">
           {/* Contact Form */}
           <Card className="mb-0">
-            <CardHeader className="pb-3">
+            <CardHeader className="pb-2">
               <CardTitle className="font-headline text-2xl font-bold text-gray-900">
                 שלח לנו הודעה
               </CardTitle>
             </CardHeader>
-            <CardContent className="pb-2 pt-0">
-              <form onSubmit={handleSubmit} className="space-y-4">
+            <CardContent className="pb-0 pt-0">
+              <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="font-body block text-sm font-medium text-gray-700 mb-2">
@@ -107,7 +107,7 @@ export default function ContactSection() {
                     placeholder="כתבו כאן את ההודעה שלכם..."
                   />
                 </div>
-                <div className="pt-2">
+                <div className="pt-0">
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
                     שלח הודעה
                   </Button>

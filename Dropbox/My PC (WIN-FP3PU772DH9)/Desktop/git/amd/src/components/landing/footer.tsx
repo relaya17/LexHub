@@ -18,16 +18,16 @@ export function Footer({ t }: FooterProps) {
         { href: '/terms-of-service', label: t.terms_of_service },
     ];
     return (
-        <footer className="pt-1 pb-4 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
+        <footer className="pt-0 pb-3 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
             <div className="container mx-auto text-center">
-                <nav className="flex justify-center flex-wrap gap-8 md:gap-10 mb-2">
+                <nav className="flex justify-center flex-wrap gap-8 md:gap-10 mb-1">
                     {navItems.map((item) => (
                         <Link key={item.href} href={item.href} className="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             {item.label}
                         </Link>
                     ))}
                 </nav>
-                <p className="text-base text-gray-600 mb-1">&copy; {currentYear} {t.titlePart2}. {t.rights_reserved}</p>
+                <p className="text-base text-gray-600 mb-0.5">&copy; {currentYear} {t.titlePart2}. {t.rights_reserved}</p>
                 <a
                   href="https://www.Amd-archive.com"
                   target="_blank"
