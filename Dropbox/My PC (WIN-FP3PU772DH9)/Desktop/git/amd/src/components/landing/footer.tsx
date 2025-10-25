@@ -18,7 +18,7 @@ export function Footer({ t }: FooterProps) {
         { href: '/terms-of-service', label: t.terms_of_service },
     ];
     return (
-        <footer className="pt-4 pb-6 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
+        <footer className="pt-2 pb-6 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
             <div className="container mx-auto text-center">
                 <nav className="flex justify-center flex-wrap gap-8 md:gap-10 mb-3">
                     {navItems.map((item) => (
