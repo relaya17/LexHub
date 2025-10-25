@@ -41,13 +41,13 @@ export default function ContactSection() {
 
         <div className="max-w-2xl mx-auto mb-0 pb-0">
           {/* Contact Form */}
-          <Card className="mb-0 pb-0 border-b-0">
+          <Card className="mb-0 pb-0">
             <CardHeader className="pb-1">
               <CardTitle className="font-headline text-2xl font-bold text-gray-900">
                 שלח לנו הודעה
               </CardTitle>
             </CardHeader>
-            <CardContent className="pb-0 pt-0">
+            <CardContent className="pb-3 pt-0">
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
