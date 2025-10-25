@@ -18,9 +18,9 @@ export function Footer({ t }: FooterProps) {
         { href: '/terms-of-service', label: t.terms_of_service },
     ];
     return (
-        <footer className="pt-6 pb-6 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
+        <footer className="pt-8 pb-6 px-6 md:px-12 bg-gray-50 border-t border-gray-200">
             <div className="container mx-auto text-center">
-                <nav className="flex justify-center flex-wrap gap-8 md:gap-10 mb-3">
+                <nav className="flex justify-center flex-wrap gap-4 md:gap-6 mb-3">
                     {navItems.map((item) => (
                         <Link key={item.href} href={item.href} className="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             {item.label}
