@@ -30,8 +30,8 @@ export default function ContactSection() {
   return (
     <section id="contact" className="pt-8 pb-0 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0">
-        <div className="text-center mb-4">
-          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-2">
+        <div className="text-center mb-3">
+          <h2 className="font-headline text-4xl font-bold text-blue-600 mb-1.5">
             צרו קשר
           </h2>
           <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto">
@@ -42,14 +42,14 @@ export default function ContactSection() {
         <div className="max-w-2xl mx-auto mb-0 pb-0">
           {/* Contact Form */}
           <Card className="mb-0 pb-0">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-1">
               <CardTitle className="font-headline text-2xl font-bold text-gray-900">
                 שלח לנו הודעה
               </CardTitle>
             </CardHeader>
             <CardContent className="pb-0 pt-0">
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label htmlFor="name" className="font-body block text-sm font-medium text-gray-700 mb-2">
                       שם מלא
@@ -107,7 +107,7 @@ export default function ContactSection() {
                     placeholder="כתבו כאן את ההודעה שלכם..."
                   />
                 </div>
-                <div className="pt-0">
+                <div className="pt-0 -mb-1">
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
                     שלח הודעה
                   </Button>
