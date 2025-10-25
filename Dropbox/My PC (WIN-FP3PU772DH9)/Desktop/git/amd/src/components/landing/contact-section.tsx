@@ -47,7 +47,7 @@ export default function ContactSection() {
                 שלח לנו הודעה
               </CardTitle>
             </CardHeader>
-            <CardContent className="pb-8 pt-0">
+            <CardContent className="pb-12 pt-0">
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
