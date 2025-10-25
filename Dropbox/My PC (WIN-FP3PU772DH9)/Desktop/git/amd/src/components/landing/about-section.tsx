@@ -58,7 +58,7 @@ export default function AboutSection() {
 
         <div className="mt-8 text-center">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="font-headline text-2xl font-bold text-blue-600 mb-4">
+            <h3 className="font-headline text-4xl font-bold text-blue-600 mb-4">
               למה לבחור ב-AMD?
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
