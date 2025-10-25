@@ -29,7 +29,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="pt-12 pb-0 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0">
         <div className="text-center mb-8">
           <h2 className="font-headline text-4xl font-bold text-blue-600 mb-3">
             צרו קשר
@@ -39,9 +39,9 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-0">
+        <div className="max-w-2xl mx-auto mb-0 pb-0">
           {/* Contact Form */}
-          <Card className="mb-0">
+          <Card className="mb-0 pb-0">
             <CardHeader className="pb-2">
               <CardTitle className="font-headline text-2xl font-bold text-gray-900">
                 שלח לנו הודעה
