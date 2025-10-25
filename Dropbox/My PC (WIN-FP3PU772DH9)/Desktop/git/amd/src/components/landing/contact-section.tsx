@@ -47,7 +47,7 @@ export default function ContactSection() {
                 שלח לנו הודעה
               </CardTitle>
             </CardHeader>
-            <CardContent className="pb-0 pt-0">
+            <CardContent className="pb-6 pt-0">
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
@@ -107,7 +107,7 @@ export default function ContactSection() {
                     placeholder="כתבו כאן את ההודעה שלכם..."
                   />
                 </div>
-                <div className="pt-0 -mb-1">
+                <div className="pt-0">
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
                     שלח הודעה
                   </Button>
