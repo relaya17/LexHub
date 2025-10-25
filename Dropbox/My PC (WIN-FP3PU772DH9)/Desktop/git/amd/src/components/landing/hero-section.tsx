@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ t }: HeroSectionProps) {
     return (
-        <section id="home" className="py-12 md:py-16 bg-card">
+        <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-16 bg-card">
             <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-right space-y-6">
                     <div>
