@@ -128,11 +128,11 @@ body {
 
 /* Font families */
 .font-body {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-heebo), 'Heebo', sans-serif;
 }
 
 .font-headline {
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--font-rubik), 'Rubik', sans-serif;
 }
 
 /* Animations */

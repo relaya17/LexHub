@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Heebo, Rubik } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const heebo = Heebo({ 
+  subsets: ["latin", "hebrew"],
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-heebo",
+  display: "swap",
+});
+
+const rubik = Rubik({ 
+  subsets: ["latin", "hebrew"],
+  weight: ["700", "900"],
+  variable: "--font-rubik",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "ארכיב דיגיטלי | A.M.D.",
@@ -15,13 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="he" dir="rtl">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Rubik:wght@700;900&display=swap" rel="stylesheet" />
-      </head>
-      <body className={`${inter.className} font-body antialiased`}>
+    <html lang="he" dir="rtl" className={`${heebo.variable} ${rubik.variable}`}>
+      <body className="font-body antialiased">
         {children}
       </body>
     </html>

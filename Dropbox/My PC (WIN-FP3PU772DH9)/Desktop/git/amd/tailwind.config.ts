@@ -11,8 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Heebo', 'sans-serif'],
-        headline: ['Rubik', 'sans-serif'],
+        body: ['var(--font-heebo)', 'Heebo', 'sans-serif'],
+        headline: ['var(--font-rubik)', 'Rubik', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
