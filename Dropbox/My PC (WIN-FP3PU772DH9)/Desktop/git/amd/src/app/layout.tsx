@@ -19,6 +19,10 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: "ארכיב דיגיטלי | A.M.D.",
   description: "מעבירים את הניירת שלך לעידן הדיגיטלי",
+  icons: {
+    icon: '/mm.png',
+    apple: '/mm.png',
+  },
 };
 
 export default function RootLayout({
