@@ -10,7 +10,6 @@ import {
   BarChart3, 
   Globe, 
   CheckCircle,
-  Star,
   Play,
   Menu,
   X
@@ -19,6 +18,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageSwitcher } from '@/components/language-switcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useInView } from 'react-intersection-observer';
 
 const features = [
@@ -66,33 +67,6 @@ const features = [
   },
 ];
 
-const testimonials = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Senior Partner',
-    company: 'Johnson & Associates',
-    content: 'LexHub has revolutionized our practice. The efficiency gains are incredible.',
-    rating: 5,
-    avatar: '/avatars/sarah.jpg',
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Legal Director',
-    company: 'TechCorp Legal',
-    content: 'The best legal technology platform we\'ve ever used. Game-changing.',
-    rating: 5,
-    avatar: '/avatars/michael.jpg',
-  },
-  {
-    name: 'Emily Rodriguez',
-    role: 'Managing Attorney',
-    company: 'Rodriguez Law Firm',
-    content: 'Intuitive, powerful, and reliable. LexHub is the future of legal practice.',
-    rating: 5,
-    avatar: '/avatars/emily.jpg',
-  },
-];
-
 const stats = [
   { label: 'Happy Clients', value: '10,000+' },
   { label: 'Cases Managed', value: '1M+' },
@@ -103,6 +77,7 @@ const stats = [
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -139,25 +114,27 @@ export default function HomePage() {
 
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2 py-1" aria-label="View features section">
-                Features
+                {t('nav.services')}
               </a>
               <a href="#testimonials" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2 py-1" aria-label="View testimonials section">
-                Testimonials
+                {t('nav.about')}
               </a>
               <a href="#pricing" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2 py-1" aria-label="View pricing section">
-                Pricing
+                {t('nav.contact')}
               </a>
+              <LanguageSwitcher />
               <Button variant="outline" size="sm" aria-label="Sign in to your account">
-                Sign In
+                {t('common.login')}
               </Button>
               <Button size="sm" aria-label="Get started with LexHub">
-                Get Started
+                {t('hero.cta')}
                 <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
               </Button>
               <ThemeToggle />
             </div>
 
             <div className="md:hidden flex items-center space-x-2">
+              <LanguageSwitcher />
               <ThemeToggle />
               <Button
                 variant="ghost"
@@ -183,10 +160,10 @@ export default function HomePage() {
                   Features
                 </a>
                 <a href="#testimonials" className="block text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Testimonials
+                  About
                 </a>
                 <a href="#pricing" className="block text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Pricing
+                  Contact
                 </a>
                 <div className="flex space-x-2">
                   <Button variant="outline" size="sm" className="flex-1">
@@ -215,15 +192,11 @@ export default function HomePage() {
               <Badge variant="secondary" className="mb-4 text-sm font-medium">
                 🚀 Revolutionary Legal Technology
               </Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-                The Future of{' '}
-                <span className="gradient-text">Legal Practice</span>{' '}
-                is Here
+              <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t('hero.title')}
               </h1>
-              <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Transform your legal practice with LexHub - the most advanced, intelligent, 
-                and user-friendly legal technology platform. Experience unprecedented efficiency, 
-                security, and innovation.
+              <p className={`text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t('hero.subtitle')}
               </p>
             </motion.div>
 
@@ -307,68 +280,6 @@ export default function HomePage() {
                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                       {feature.description}
                     </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-slate-50 dark:bg-slate-800" aria-labelledby="testimonials-heading">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <Badge variant="secondary" className="mb-4">
-              💬 Client Testimonials
-            </Badge>
-            <h2 id="testimonials-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              Loved by Legal Professionals{' '}
-              <span className="gradient-text">Worldwide</span>
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              See what our clients say about their experience with LexHub.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                      "{testimonial.content}"
-                    </p>
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
-                        {testimonial.name.charAt(0)}
-                      </div>
-                      <div className="ml-3">
-                        <div className="font-semibold text-slate-900 dark:text-white">
-                          {testimonial.name}
-                        </div>
-                        <div className="text-sm text-slate-600 dark:text-slate-400">
-                          {testimonial.role}, {testimonial.company}
-                        </div>
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
