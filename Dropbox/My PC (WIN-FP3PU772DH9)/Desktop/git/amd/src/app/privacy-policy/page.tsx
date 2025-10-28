@@ -71,17 +71,17 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-grow container mx-auto px-6 md:px-12 py-16">
+      <main className="flex-grow container mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
         <div className="max-w-4xl mx-auto prose lg:prose-xl">
-          <h1 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-primary">{pageContent.title}</h1>
-          <p className="text-sm text-muted-foreground">{pageContent.lastUpdated}</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline mb-4 text-primary">{pageContent.title}</h1>
+          <p className="text-xs sm:text-sm text-muted-foreground">{pageContent.lastUpdated}</p>
 
-          <div className="mt-8 space-y-6 text-lg text-foreground">
+          <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6 text-base sm:text-lg text-foreground">
             <p>{pageContent.introduction}</p>
             
             {pageContent.sections.map((section, index) => (
               <div key={index}>
-                <h2 className="text-2xl font-bold font-headline mt-8 mb-4">{section.title}</h2>
+                <h2 className="text-xl sm:text-2xl font-bold font-headline mt-6 sm:mt-8 mb-3 sm:mb-4">{section.title}</h2>
                 <p>{section.content}</p>
               </div>
             ))}

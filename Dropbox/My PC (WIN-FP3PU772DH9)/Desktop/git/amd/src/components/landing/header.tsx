@@ -14,26 +14,27 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo - Left */}
           <div className="flex items-center gap-2">
-            <span className="font-headline text-lg font-semibold text-gray-900">ארכיב דיגיטלי</span>
-            <span className="text-lg text-gray-400">|</span>
-            <span className="font-headline text-xl font-bold text-blue-600">A.M.D</span>
+            <span className="font-headline text-sm sm:text-lg font-semibold text-gray-900">ארכיב דיגיטלי</span>
+            <span className="text-sm sm:text-lg text-gray-400">|</span>
+            <span className="font-headline text-base sm:text-xl font-bold text-blue-600">A.M.D</span>
           </div>
 
           {/* Menu Button + Language Buttons - Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setLanguage('en')}
-              className={`px-4 py-2 rounded-md ${language === 'en' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50'}`}
+              className={`px-2 sm:px-4 py-2 rounded-md text-xs sm:text-sm ${language === 'en' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50'}`}
             >
-              English
+              <span className="hidden sm:inline">English</span>
+              <span className="sm:hidden">EN</span>
             </Button>
             <Button
               variant="default"
               size="sm"
               onClick={() => setLanguage('he')}
-              className={`px-4 py-2 rounded-md ${language === 'he' ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+              className={`px-2 sm:px-4 py-2 rounded-md text-xs sm:text-sm ${language === 'he' ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
             >
               עברית
             </Button>
