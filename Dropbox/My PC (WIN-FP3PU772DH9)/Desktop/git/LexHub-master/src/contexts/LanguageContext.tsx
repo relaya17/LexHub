@@ -52,6 +52,9 @@ const translations = {
     'terms.title': 'Terms of Service',
     'terms.subtitle': 'Terms of Service',
     'terms.description': 'Please read these terms carefully before using LexHub services. By using our platform, you agree to be bound by these terms.',
+    'seo.title': 'LexHub - Revolutionary Legal Technology Platform | AI-Powered Legal Solutions',
+    'seo.description': 'Transform your legal practice with LexHub - the most advanced, intelligent, and user-friendly legal technology platform. AI-powered case management, document automation, and courtroom analytics for modern law firms.',
+    'seo.keywords': 'legal technology, legal software, law practice management, legal AI, case management software, courtroom technology, legal innovation, justice technology, legal automation, document management, legal analytics, law firm software, legal practice solutions, attorney technology, legal workflow automation, court management system, legal data analytics, law office management, legal tech platform, digital legal services',
   },
   he: {
     'nav.home': 'בית',
@@ -91,6 +94,9 @@ const translations = {
     'terms.title': 'תנאי שירות',
     'terms.subtitle': 'תנאי שירות',
     'terms.description': 'אנא קראו את התנאים בקפידה לפני השימוש בשירותי LexHub. על ידי השימוש בפלטפורמה שלנו, אתם מסכימים להיות מחויבים לתנאים אלה.',
+    'seo.title': 'LexHub - פלטפורמת טכנולוגיה משפטית מהפכנית | פתרונות AI למשרדי עורכי דין',
+    'seo.description': 'שנו את הפרקטיקה המשפטית שלכם עם LexHub - פלטפורמת הטכנולוגיה המשפטית המתקדמת, החכמה וידידותית למשתמש ביותר. ניהול תיקים מונע AI, אוטומציה של מסמכים ואנליטיקה לבית המשפט למשרדי עורכי דין מודרניים.',
+    'seo.keywords': 'טכנולוגיה משפטית, תוכנה משפטית, ניהול פרקטיקה משפטית, AI משפטי, תוכנת ניהול תיקים, טכנולוגיית בית משפט, חדשנות משפטית, טכנולוגיית צדק, אוטומציה משפטית, ניהול מסמכים, אנליטיקה משפטית, תוכנת משרד עורכי דין, פתרונות פרקטיקה משפטית, טכנולוגיית עורכי דין, אוטומציית זרימת עבודה משפטית, מערכת ניהול בית משפט, אנליטיקת נתונים משפטיים, ניהול משרד עורכי דין, פלטפורמת טק משפטי, שירותים משפטיים דיגיטליים',
   },
   ar: {
     'nav.home': 'الرئيسية',
@@ -130,6 +136,9 @@ const translations = {
     'terms.title': 'شروط الخدمة',
     'terms.subtitle': 'شروط الخدمة',
     'terms.description': 'يرجى قراءة هذه الشروط بعناية قبل استخدام خدمات LexHub. باستخدام منصتنا، فإنك توافق على الالتزام بهذه الشروط.',
+    'seo.title': 'LexHub - منصة التكنولوجيا القانونية الثورية | حلول الذكاء الاصطناعي لمكاتب المحاماة',
+    'seo.description': 'حوّل ممارستك القانونية مع LexHub - منصة التكنولوجيا القانونية الأكثر تطوراً وذكاءً وسهولة في الاستخدام. إدارة القضايا بالذكاء الاصطناعي وأتمتة المستندات وتحليلات المحكمة لمكاتب المحاماة الحديثة.',
+    'seo.keywords': 'التكنولوجيا القانونية، البرمجيات القانونية، إدارة الممارسة القانونية، الذكاء الاصطناعي القانوني، برنامج إدارة القضايا، تكنولوجيا المحكمة، الابتكار القانوني، تكنولوجيا العدالة، الأتمتة القانونية، إدارة المستندات، التحليلات القانونية، برنامج مكتب المحاماة، حلول الممارسة القانونية، تكنولوجيا المحامين، أتمتة سير العمل القانوني، نظام إدارة المحكمة، تحليلات البيانات القانونية، إدارة مكتب المحاماة، منصة التكنولوجيا القانونية، الخدمات القانونية الرقمية',
   },
 };
 
