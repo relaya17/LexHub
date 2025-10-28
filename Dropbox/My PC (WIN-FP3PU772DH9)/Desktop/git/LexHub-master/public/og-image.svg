@@ -1,0 +1,55 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Background Pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="200" fill="white"/>
+    <circle cx="1100" cy="500" r="250" fill="white"/>
+    <circle cx="600" cy="315" r="150" fill="white"/>
+  </g>
+  
+  <!-- Logo -->
+  <g transform="translate(150, 180)">
+    <rect width="120" height="120" rx="20" fill="white" opacity="0.2"/>
+    <path d="M60 30L20 50V90L60 110L100 90V50L60 30Z" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M60 60L40 50M60 60L80 50M60 60V90" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="300" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white">
+    LexHub
+  </text>
+  <text x="300" y="330" font-family="Arial, sans-serif" font-size="36" fill="white" opacity="0.9">
+    Revolutionary Legal Technology Platform
+  </text>
+  <text x="300" y="400" font-family="Arial, sans-serif" font-size="28" fill="white" opacity="0.8">
+    Transform your legal practice with advanced AI-powered tools
+  </text>
+  
+  <!-- Feature Icons -->
+  <g transform="translate(300, 450)">
+    <rect width="50" height="50" rx="10" fill="white" opacity="0.2"/>
+    <path d="M25 15L15 20V35L25 40L35 35V20L25 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  
+  <g transform="translate(380, 450)">
+    <rect width="50" height="50" rx="10" fill="white" opacity="0.2"/>
+    <path d="M25 18L15 25L25 32L35 25L25 18Z" stroke="white" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(460, 450)">
+    <rect width="50" height="50" rx="10" fill="white" opacity="0.2"/>
+    <circle cx="25" cy="25" r="12" stroke="white" stroke-width="2" fill="none"/>
+  </g>
+  
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+
+
