@@ -3,7 +3,7 @@ services:
     name: lexhub
     env: node
     plan: free
-    buildCommand: chmod +x build.sh && ./build.sh
+    buildCommand: corepack enable && pnpm install && pnpm build
     startCommand: pnpm start
     envVars:
       - key: NODE_ENV
