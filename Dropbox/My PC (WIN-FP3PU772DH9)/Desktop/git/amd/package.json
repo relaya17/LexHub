@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
+    "preinstall": "corepack enable",
     "postinstall": "patch-package"
   },
   "dependencies": {
