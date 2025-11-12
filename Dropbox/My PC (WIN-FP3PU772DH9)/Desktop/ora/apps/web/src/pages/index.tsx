@@ -142,8 +142,8 @@ export default function Home() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.25,
-          zIndex: 0,
+          opacity: 0.35,
+          zIndex: -1,
           pointerEvents: "none"
         }}
       >
@@ -220,7 +220,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main style={{ position: "relative", zIndex: 1 }}>
+      <main>
         {/* Hero Section */}
         <section className="hero">
           <h2>{t.heroTitle}</h2>
@@ -237,7 +237,7 @@ export default function Home() {
 
         {/* Features */}
         <section id="features" style={{ 
-          backgroundColor: "rgba(245, 241, 232, 0.85)",
+          backgroundColor: "rgba(245, 241, 232, 0.5)",
           backdropFilter: "blur(10px)",
           padding: "4rem 1rem",
           margin: "0"
