@@ -201,8 +201,7 @@ export default function Home() {
           </nav>
           )}
 
-          {/* Mobile Hamburger - Show only on small screens */}
-          {isSmallScreen && (
+          {/* Hamburger Menu - Always visible, toggles nav */}
           <button 
             onClick={() => alert("Mobile menu - Coming soon!")}
             style={{
@@ -210,13 +209,13 @@ export default function Home() {
               border: "none",
               cursor: "pointer",
               fontSize: "1.5rem",
-              color: "#b45309"
+              color: "#b45309",
+              display: isSmallScreen ? "block" : "none"
             }}
             title="תפריט"
           >
             ☰
           </button>
-          )}
         </div>
       </header>
 
