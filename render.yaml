@@ -61,10 +61,3 @@ services:
         value: https://tastemate-api.onrender.com
       - key: VITE_STRIPE_PUBLISHABLE_KEY
         sync: false
-
-  # MongoDB Database (optional - if you don't have external MongoDB)
-  # - type: pserv
-  #   name: tastemate-mongodb
-  #   runtime: docker
-  #   plan: free
-  #   dockerfilePath: ./Dockerfile.mongo
