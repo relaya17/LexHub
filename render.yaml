@@ -1,0 +1,70 @@
+services:
+  # Backend API Server
+  - type: web
+    name: tastemate-api
+    runtime: node
+    plan: free
+    rootDirectory: Dropbox (Old)/My PC (WIN-FP3PU772DH9)/Desktop/git/local-chef-meals-main
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@9.12.2 --activate
+      pnpm install --frozen-lockfile
+      pnpm build:server
+    startCommand: cd apps/server && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB_NAME
+        value: localchef
+      - key: JWT_SECRET
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+    healthCheckPath: /health
+
+  # Frontend Static Site
+  - type: web
+    name: tastemate-web
+    runtime: static
+    plan: free
+    rootDirectory: Dropbox (Old)/My PC (WIN-FP3PU772DH9)/Desktop/git/local-chef-meals-main
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@9.12.2 --activate
+      pnpm install --frozen-lockfile
+      pnpm build:web
+    staticPublishPath: ./apps/web/dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://tastemate-api.onrender.com
+      - key: VITE_STRIPE_PUBLISHABLE_KEY
+        sync: false
+
+  # MongoDB Database (optional - if you don't have external MongoDB)
+  # - type: pserv
+  #   name: tastemate-mongodb
+  #   runtime: docker
+  #   plan: free
+  #   dockerfilePath: ./Dockerfile.mongo
