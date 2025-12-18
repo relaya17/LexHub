@@ -8,7 +8,7 @@ import type {
   ContractCheckResult,
 } from './types';
 
-const BASE_URL = 'http://localhost:4000/api';
+const BASE_URL = 'http://localhost:6025/api';
 
 async function requestJson<TResponse>(
   input: RequestInfo,

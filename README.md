@@ -186,7 +186,7 @@ cp server/env.example server/.env
 pnpm start:server
 ```
 
-השרת מאזין על `http://localhost:4000`.
+השרת מאזין על `http://localhost:6025`.
 
 #### אופציה ב׳: עם Docker Compose (MongoDB + Server)
 

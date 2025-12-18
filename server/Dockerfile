@@ -17,7 +17,7 @@ RUN pnpm install --frozen-lockfile
 # Build server (tsc)
 RUN pnpm --filter lexhub-server build
 
-EXPOSE 4000
+EXPOSE 6025
 
 CMD ["pnpm", "--filter", "lexhub-server", "start"]
 

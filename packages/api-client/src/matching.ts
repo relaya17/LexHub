@@ -1,7 +1,7 @@
 import type { MatchingFilters } from '@lexhub/types';
 import type { Lawyer } from './types';
 
-const BASE_URL = 'http://localhost:4000/api';
+const BASE_URL = 'http://localhost:6025/api';
 
 export async function fetchMatchingLawyers(
   filters: MatchingFilters,

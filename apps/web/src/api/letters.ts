@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Letter } from '../types/Letter';
 
-const API_URL = 'http://localhost:4000/api';
+const API_URL = 'http://localhost:6025/api';
 
 export const lettersApi = {
   async getLetters(): Promise<Letter[]> {

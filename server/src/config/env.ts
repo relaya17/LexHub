@@ -19,9 +19,9 @@ const parseSameSite = (v: string | undefined): CookieSameSite => {
 
 export const env = {
   NODE_ENV: process.env.NODE_ENV ?? 'development',
-  PORT: Number(process.env.PORT) || 4000,
+  PORT: Number(process.env.PORT) || 6025,
   WEB_ORIGIN: process.env.WEB_ORIGIN ?? 'http://localhost:3019',
-  SERVER_ORIGIN: process.env.SERVER_ORIGIN ?? `http://localhost:${Number(process.env.PORT) || 4000}`,
+  SERVER_ORIGIN: process.env.SERVER_ORIGIN ?? `http://localhost:${Number(process.env.PORT) || 6025}`,
 
   // Access token
   JWT_SECRET: requireEnv('JWT_SECRET'),

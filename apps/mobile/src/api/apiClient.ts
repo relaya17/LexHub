@@ -2,7 +2,7 @@ import type { User } from '../types/User';
 import type { Letter } from '../types/Letter';
 import type { Contract } from '../types/Contract';
 
-const API_URL = 'http://localhost:4000/api';
+const API_URL = 'http://localhost:6025/api';
 
 async function getJson<T>(path: string): Promise<T> {
   const response = await fetch(`${API_URL}${path}`);
