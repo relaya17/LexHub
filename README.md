@@ -208,6 +208,31 @@ pnpm start:web
 
 ---
 
+## Deploy (Vercel + Render)
+
+### Render (Server)
+- צרי שירות חדש ב‑Render מתוך הריפו.
+- מומלץ להשתמש בקובץ `render.yaml` (ברמת ה‑root) שמגדיר Build/Start לשירות `lexhub-server`.
+- הגדרי משתני סביבה (Render Dashboard → Environment):
+  - **MONGODB_URI**: ה‑URI שלך ל‑Atlas
+  - **JWT_SECRET**: סוד חזק
+  - **JWT_REFRESH_SECRET**: סוד חזק (שונה)
+  - **WEB_ORIGIN**: הדומיין של Vercel (למשל `https://YOUR_VERCEL_DOMAIN.vercel.app`)
+  - **COOKIE_SECURE**: `true`
+  - **COOKIE_SAMESITE**: `lax` (או `none` אם צריך cross-site cookies)
+
+### Vercel (Web)
+- צרי פרויקט חדש ב‑Vercel מתוך אותו ריפו.
+- בחרי **Root Directory = `apps/web`**.
+- ה‑Web ניגש ל‑API דרך `/api`.
+- הקובץ `apps/web/vercel.json` מגדיר Rewrite:
+  - `/api/*` → `https://lexhub-server.onrender.com/api/*`
+  - SPA fallback → `/index.html`
+
+חשוב: אם הדומיין ב‑Render שונה (לא `lexhub-server.onrender.com`), עדכני את ה‑destination בתוך `apps/web/vercel.json`.
+
+---
+
 ## בדיקות (Server)
 
 הבדיקות רצות עם Jest + Supertest.

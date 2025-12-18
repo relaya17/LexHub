@@ -1,11 +1,9 @@
-import axios from 'axios';
 import type { User } from '../types/User';
-
-const API_URL = 'http://localhost:6025/api';
+import { http } from './http';
 
 export const usersApi = {
   async getUsers(): Promise<User[]> {
-    const response = await axios.get<User[]>(`${API_URL}/users`);
+    const response = await http.get<User[]>('/users');
     return response.data;
   },
 };

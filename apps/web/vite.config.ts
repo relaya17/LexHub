@@ -15,6 +15,12 @@ export default defineConfig({
     port: 3019,
     strictPort: true,
     open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:6025',
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     outDir: 'dist',

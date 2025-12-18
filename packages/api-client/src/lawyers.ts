@@ -1,7 +1,7 @@
 import type { ApiResponse, Lawyer } from './types';
 import { getLawyers as getLawyersRaw } from './api';
 
-const BASE_URL = 'http://localhost:6025/api';
+const BASE_URL = '/api';
 
 export const getAllLawyers = (): Promise<ApiResponse<Lawyer[]>> =>
   getLawyersRaw();

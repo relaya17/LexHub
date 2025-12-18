@@ -2,7 +2,9 @@ import type { User } from '../types/User';
 import type { Letter } from '../types/Letter';
 import type { Contract } from '../types/Contract';
 
-const API_URL = 'http://localhost:6025/api';
+// Expo: configure via EXPO_PUBLIC_API_URL (e.g. "https://lexhub-server.onrender.com/api")
+// Local dev default:
+const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:6025/api';
 
 async function getJson<T>(path: string): Promise<T> {
   const response = await fetch(`${API_URL}${path}`);

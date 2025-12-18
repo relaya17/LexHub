@@ -8,7 +8,9 @@ import type {
   ContractCheckResult,
 } from './types';
 
-const BASE_URL = 'http://localhost:6025/api';
+// Prefer same-origin "/api" (works with Vercel rewrites + Vite dev proxy).
+// For native/mobile use a dedicated client that can set an absolute base URL.
+const BASE_URL = '/api';
 
 async function requestJson<TResponse>(
   input: RequestInfo,
