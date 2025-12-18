@@ -1,11 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import matchingReducer from './slices/matchingSlice';
-import chatReducer from './slices/chatSlice';
+import chatReducer, { hydrateChatState, type ChatState } from './slices/chatSlice';
 import authReducer from './slices/authSlice';
 import { localStorageUtils } from '../utils/localStorage';
-
-const preloadedChat = localStorageUtils.loadChatState<unknown>();
-const preloadedState = preloadedChat ? { chat: preloadedChat } : undefined;
 
 export const store = configureStore({
   reducer: {
@@ -13,8 +10,13 @@ export const store = configureStore({
     chat: chatReducer,
     auth: authReducer,
   },
-  preloadedState,
+  // Important: avoid passing preloadedState here (it can confuse TS inference for Reducer preloaded state types).
 });
+
+const preloadedChat = localStorageUtils.loadChatState<ChatState>();
+if (preloadedChat) {
+  store.dispatch(hydrateChatState(preloadedChat));
+}
 
 store.subscribe(() => {
   localStorageUtils.saveChatState(store.getState().chat);

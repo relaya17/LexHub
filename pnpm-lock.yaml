@@ -60,12 +60,18 @@ importers:
       '@emotion/styled':
         specifier: ^11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.27)(react@18.3.1))(@types/react@18.3.27)(react@18.3.1)
+      '@lexhub/api-client':
+        specifier: workspace:*
+        version: link:../../packages/api-client
       '@lexhub/templates':
         specifier: workspace:*
         version: link:../../packages/templates
       '@lexhub/types':
         specifier: workspace:*
         version: link:../../packages/types
+      '@lexhub/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@mui/icons-material':
         specifier: ^7.3.6
         version: 7.3.6(@mui/material@7.3.6(@emotion/react@11.14.0(@types/react@18.3.27)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.27)(react@18.3.1))(@types/react@18.3.27)(react@18.3.1))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.27)(react@18.3.1)

@@ -40,6 +40,9 @@ const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
+    hydrateChatState: (_state, action: PayloadAction<ChatState>) => {
+      return action.payload;
+    },
     ensureConversation: (
       state,
       action: PayloadAction<{
@@ -96,7 +99,7 @@ const chatSlice = createSlice({
   },
 });
 
-export const { ensureConversation, setActiveConversation, sendMessage, clearChat } =
+export const { hydrateChatState, ensureConversation, setActiveConversation, sendMessage, clearChat } =
   chatSlice.actions;
 
 export default chatSlice.reducer;
