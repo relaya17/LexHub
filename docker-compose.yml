@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: lexhub-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: lexhub_test
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: lexhub-server
+    restart: on-failure
+    environment:
+      PORT: 4000
+      NODE_ENV: production
+      WEB_ORIGIN: http://localhost:3019
+      COOKIE_SECURE: "false"
+      COOKIE_SAMESITE: lax
+      JWT_SECRET: change-me
+      JWT_REFRESH_SECRET: change-me-refresh
+      MONGODB_URI: mongodb://root:example@mongo:27017/lexhub_test?authSource=admin
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongo
+
+

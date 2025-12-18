@@ -1,0 +1,46 @@
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependencies
+**/node_modules/
+.pnpm-store/
+
+# Build outputs
+**/dist/
+**/build/
+**/.turbo/
+
+# Vite / Next / misc caches
+**/.vite/
+**/.next/
+**/.cache/
+
+# Env files (keep env.example committed)
+.env
+.env.*
+!.env.example
+server/.env
+server/.env.*
+!server/env.example
+apps/**/.env
+apps/**/.env.*
+
+# Coverage
+coverage/
+**/coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# Cursor project metadata (if present in repo root)
+.cursor/
+
+

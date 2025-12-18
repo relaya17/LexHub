@@ -1,0 +1,809 @@
+/* Material Design 3 Theme - RTL Optimized */
+
+:root {
+  /* Primary Colors */
+  --md-primary: #1F2A44; /* Deep Indigo */
+  --md-primary-dark: #162034;
+  --md-primary-light: #2B3A5F;
+  
+  /* Brand Secondary (Muted Emerald) */
+  --md-secondary: #2F6F62;
+  --md-secondary-dark: #255B51;
+  --md-secondary-light: rgba(47, 111, 98, 0.18);
+
+  /* Accent */
+  --md-accent: #C6A76A; /* Warm Sand / Gold Soft */
+  
+  /* Success/Like Colors */
+  --md-success: #2F6F62;
+  --md-success-light: rgba(47, 111, 98, 0.18);
+  --md-success-dark: #255B51;
+  
+  /* Error/Dislike Colors */
+  --md-error: #F44336;
+  --md-error-light: rgba(244, 67, 54, 0.25);
+  --md-error-dark: #E53935;
+  
+  /* Background Colors */
+  --md-background: #F4F3EF; /* stone */
+  --md-surface: #FFFFFF;
+  --md-surface-variant: #FFFFFF;
+  --md-divider: #E0DED8;
+  
+  /* Text Colors */
+  --md-text-primary: #1B1B1B;
+  --md-text-secondary: #6B6B6B;
+  --md-text-body: #3A3A3A;
+  --md-text-disabled: #BDBDBD;
+  --md-text-on-primary: #FFFFFF;
+  
+  /* Shadow Colors */
+  --md-shadow-sm: rgba(0, 0, 0, 0.15);
+  --md-shadow-md: rgba(0, 0, 0, 0.2);
+  --md-shadow-lg: rgba(0, 0, 0, 0.3);
+  
+  /* Border Radius */
+  --md-radius-sm: 8px;
+  --md-radius-md: 12px;
+  --md-radius-lg: 16px;
+  --md-radius-xl: 24px;
+}
+
+/* Global Typography - Hebrew Optimized */
+body,
+html {
+  font-family: 'Assistant', 'Segoe UI', Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--md-text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Global Background */
+body {
+  background-color: var(--md-background);
+}
+
+/* Primary Buttons */
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--md-primary) !important;
+  border-color: var(--md-primary) !important;
+  color: var(--md-text-on-primary) !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--md-primary-dark) !important;
+  border-color: var(--md-primary-dark) !important;
+  box-shadow: 0 4px 8px var(--md-shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px var(--md-shadow-sm);
+}
+
+/* Success/Like Buttons */
+.btn-success,
+.btn-success:focus,
+.btn-success:active {
+  background-color: var(--md-success) !important;
+  border-color: var(--md-success) !important;
+  color: var(--md-text-on-primary) !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm);
+}
+
+.btn-success:hover {
+  background-color: var(--md-success-dark) !important;
+  border-color: var(--md-success-dark) !important;
+  box-shadow: 0 4px 8px var(--md-shadow-md);
+}
+
+/* Success Outline Buttons */
+.btn-outline-success,
+.btn-outline-success:focus,
+.btn-outline-success:active {
+  color: var(--md-success) !important;
+  border-color: var(--md-success) !important;
+  background-color: transparent !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm);
+}
+
+.btn-outline-success:hover {
+  color: var(--md-text-on-primary) !important;
+  background-color: var(--md-success) !important;
+  border-color: var(--md-success) !important;
+  box-shadow: 0 4px 8px var(--md-shadow-md);
+}
+
+/* Error/Dislike Buttons */
+.btn-danger,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: var(--md-error) !important;
+  border-color: var(--md-error) !important;
+  color: var(--md-text-on-primary) !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm);
+}
+
+.btn-danger:hover {
+  background-color: var(--md-error-dark) !important;
+  border-color: var(--md-error-dark) !important;
+  box-shadow: 0 4px 8px var(--md-shadow-md);
+}
+
+/* Secondary Buttons */
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active {
+  /* Keep Bootstrap "secondary" neutral */
+  background-color: var(--md-surface-variant) !important;
+  border-color: var(--md-divider) !important;
+  color: var(--md-text-primary) !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  border-color: var(--md-divider) !important;
+  box-shadow: 0 4px 8px var(--md-shadow-md);
+}
+
+/* Outline Buttons */
+.btn-outline-primary {
+  border-color: var(--md-primary) !important;
+  color: var(--md-primary) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--md-primary) !important;
+  color: var(--md-text-on-primary) !important;
+  border-color: var(--md-primary) !important;
+}
+
+/* Cards */
+.card {
+  background-color: var(--md-surface) !important;
+  border: none !important;
+  border-radius: var(--md-radius-md) !important;
+  box-shadow: 0 2px 8px var(--md-shadow-sm) !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px var(--md-shadow-md) !important;
+  transform: translateY(-2px);
+}
+
+/* Swipe Cards - Material Design */
+.swipe-card {
+  background-color: var(--md-surface) !important;
+  border-radius: var(--md-radius-lg) !important;
+  box-shadow: 0 4px 20px var(--md-shadow-md) !important;
+}
+
+.swipe-overlay-like {
+  background-color: var(--md-success-light) !important;
+}
+
+.swipe-overlay-dislike {
+  background-color: var(--md-error-light) !important;
+}
+
+/* Page Background */
+.page-background {
+  background-color: var(--md-background);
+  /* IMPORTANT: do not set 100vh here.
+     App shell already uses min-vh-100 + flex layout for a sticky footer.
+     Setting 100vh here duplicates height and creates "empty scroll" + hidden footer. */
+  min-height: auto;
+}
+
+/* Hero / Marketing */
+.lexhub-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 400px at 15% 10%, rgba(47, 111, 98, 0.10), transparent 55%),
+    radial-gradient(800px 380px at 85% 0%, rgba(198, 167, 106, 0.12), transparent 55%),
+    var(--md-background);
+}
+
+.lexhub-hero__title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+}
+
+.lexhub-hero__title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64%;
+  max-width: 260px;
+  height: 3px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--md-accent);
+  opacity: 0.95;
+}
+
+.lexhub-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--md-divider);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--md-text-primary);
+  font-size: 0.9rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.lexhub-hero__card {
+  background: var(--md-surface) !important;
+  border: 1px solid var(--md-divider) !important;
+  border-radius: var(--md-radius-md) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.lexhub-hero__previewCard {
+  min-height: 220px;
+}
+
+@media (max-width: 576px) {
+  .lexhub-hero__previewCard {
+    min-height: 180px;
+    padding: 1.1rem !important;
+  }
+}
+
+.lexhub-hero__cardTitle {
+  color: var(--md-primary);
+  font-weight: 700;
+}
+
+/* Modal */
+.modal-content {
+  background-color: var(--md-surface) !important;
+  border: none !important;
+  border-radius: var(--md-radius-lg) !important;
+  box-shadow: 0 8px 32px var(--md-shadow-lg) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--md-divider) !important;
+  background-color: var(--md-surface) !important;
+}
+
+.modal-body {
+  background-color: var(--md-surface) !important;
+  color: var(--md-text-primary) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--md-divider) !important;
+  background-color: var(--md-surface) !important;
+}
+
+/* Form Controls */
+.form-control:focus {
+  border-color: var(--md-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(31, 42, 68, 0.25) !important;
+}
+
+.form-control {
+  border-radius: var(--md-radius-sm) !important;
+  border-color: var(--md-divider) !important;
+}
+
+/* Navbar */
+.navbar {
+  /* Light premium navbar (keeps logo visible) */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(244, 243, 239, 0.92) 55%,
+    rgba(224, 222, 216, 0.75) 100%
+  ) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px var(--md-shadow-sm) !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--md-accent), var(--md-secondary));
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.lexhub-nav-ai {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 42, 68, 0.12);
+  background: transparent;
+  color: var(--md-primary);
+  box-shadow: none;
+}
+
+.lexhub-nav-auth__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--md-primary);
+  border: 1px solid transparent;
+}
+
+.lexhub-nav-auth__link--secondary:hover {
+  background-color: rgba(31, 42, 68, 0.06);
+  border-color: rgba(31, 42, 68, 0.12);
+  color: var(--md-primary-dark);
+}
+
+.lexhub-nav-auth__link--primary:hover {
+  background-color: rgba(47, 111, 98, 0.12);
+  border-color: rgba(47, 111, 98, 0.25);
+  color: var(--md-secondary);
+}
+
+.lexhub-nav-auth__link:focus-visible {
+  outline: 3px solid rgba(31, 42, 68, 0.35);
+  outline-offset: 2px;
+}
+
+.lexhub-nav-auth:hover .lexhub-nav-ai {
+  background: linear-gradient(
+    135deg,
+    rgba(198, 167, 106, 0.22) 0%,
+    rgba(47, 111, 98, 0.14) 100%
+  );
+}
+
+.app-navbar {
+  /* Reduce default Bootstrap padding so the navbar doesn't feel "thick"/wide */
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.app-navbar .navbar-brand,
+.app-navbar .app-navbar__brand {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  flex-shrink: 0;
+}
+
+.app-navbar__brandText {
+  margin-right: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--md-primary);
+}
+
+.app-navbar__search {
+  border-radius: 999px !important;
+  border: 1px solid var(--md-divider) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  width: 220px;
+}
+
+.app-navbar__cta {
+  background-color: var(--md-primary) !important;
+  border-color: var(--md-primary) !important;
+  border-radius: 999px !important;
+  padding: 0.35rem 0.9rem !important;
+  font-weight: 700;
+}
+
+.app-navbar__cta:hover {
+  background-color: var(--md-primary-dark) !important;
+  border-color: var(--md-primary-dark) !important;
+}
+
+.app-navbar .app-navbar__inner {
+  /* Let Bootstrap's .container handle responsive max-width across breakpoints */
+  width: 100%;
+}
+
+.app-navbar .navbar-toggler {
+  margin: 0 !important;
+}
+
+.app-navbar .navbar-toggler {
+  /* Prevent global accessibility min-height rules from making the toggler huge */
+  min-height: auto !important;
+  min-width: auto !important;
+}
+
+.app-navbar .navbar-toggler:focus-visible {
+  outline-offset: 2px !important;
+}
+
+.app-navbar .navbar-toggler-icon {
+  /* Keep icon crisp and proportional */
+  background-size: 100% 100%;
+}
+
+.app-navbar__brand img {
+  /* Use the existing logo.png banner but make it readable:
+     give it controlled width and crop the "extra background" via clip-path.
+     This does NOT change navbar padding/height. */
+  height: 50px;
+  width: min(240px, 48vw);
+  object-fit: cover;
+  /* Focus on the left/center where the icon + blue text live (more visible on small sizes) */
+  object-position: 28% center;
+  clip-path: inset(12% 4% 12% 4% round 10px);
+  filter: drop-shadow(0 2px 10px rgba(31, 42, 68, 0.18)) contrast(1.08) saturate(1.1);
+}
+
+@media (max-width: 576px) {
+  .app-navbar__brand img {
+    /* Reduce logo width on very small screens to prevent overflow */
+    width: min(210px, 58vw);
+    object-position: 24% center;
+    clip-path: inset(10% 3% 10% 3% round 10px);
+  }
+}
+
+.navbar-brand {
+  color: var(--md-primary) !important;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--md-text-primary) !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--md-secondary) !important; /* emerald */
+}
+
+.navbar .dropdown-toggle {
+  color: var(--md-text-primary) !important;
+}
+
+.navbar .dropdown-menu {
+  background-color: var(--md-surface) !important;
+  border: 1px solid var(--md-divider) !important;
+  border-radius: var(--md-radius-md) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+.navbar .dropdown-item {
+  color: var(--md-text-primary) !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: rgba(31, 42, 68, 0.08) !important;
+  color: var(--md-primary-dark) !important;
+}
+
+.app-navbar .navbar-toggler {
+  border-color: var(--md-divider) !important;
+}
+
+.app-navbar .navbar-toggler-icon {
+  filter: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--md-background) !important;
+  border-top: 1px solid var(--md-divider) !important;
+}
+
+.app-footer {
+  background-color: var(--md-surface) !important;
+  border-top: 1px solid var(--md-divider) !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.app-footer__inner {
+  /* Let Bootstrap's .container handle responsive max-width across breakpoints */
+  width: 100%;
+}
+
+.app-footer__divider {
+  border-top: 1px solid var(--md-divider);
+  opacity: 0.7;
+}
+
+.app-footer__disclaimer {
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  color: var(--md-text-secondary) !important;
+}
+
+.app-footer__divider {
+  position: relative;
+}
+
+.app-footer__divider::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: min(280px, 70%);
+  margin: 0.5rem auto 0;
+  border-radius: 999px;
+  background: var(--md-accent);
+  opacity: 0.9;
+}
+
+.app-footer a {
+  color: var(--md-primary) !important;
+}
+
+.app-footer a:hover {
+  color: var(--md-secondary) !important;
+}
+
+.app-footer .text-muted {
+  color: var(--md-text-secondary) !important;
+}
+
+/* Alerts */
+.alert {
+  border-radius: var(--md-radius-sm) !important;
+  border: none !important;
+  box-shadow: 0 2px 4px var(--md-shadow-sm) !important;
+}
+
+/* Chat UI */
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: var(--md-radius-md);
+  border: 1px solid var(--md-divider);
+  background: rgba(255, 255, 255, 0.6);
+  min-height: 220px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 16px;
+  border: 1px solid var(--md-divider);
+  background: var(--md-surface);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  text-align: right;
+}
+
+.chat-bubble--me {
+  align-self: flex-end;
+  background: var(--md-success-light);
+  border-color: rgba(47, 111, 98, 0.25);
+}
+
+.chat-bubble--them {
+  align-self: flex-start;
+}
+
+.chat-meta {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--md-text-secondary);
+}
+
+/* Floating chat button (appears after login on every page) */
+.lexhub-fab-chat {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1050;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  min-height: 56px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--md-success);
+  color: var(--md-text-on-primary);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.lexhub-fab-chat:hover {
+  background: var(--md-success-dark);
+  color: var(--md-text-on-primary);
+}
+
+.lexhub-fab-chat:focus-visible {
+  outline: 3px solid rgba(31, 42, 68, 0.45);
+  outline-offset: 3px;
+}
+
+.alert-info {
+  background-color: rgba(31, 42, 68, 0.08) !important;
+  color: var(--md-primary-dark) !important;
+}
+
+.alert-warning {
+  background-color: rgba(198, 167, 106, 0.18) !important;
+  color: var(--md-text-primary) !important;
+}
+
+.alert-danger {
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  color: var(--md-error-dark) !important;
+}
+
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.1) !important;
+  color: var(--md-success-dark) !important;
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--md-primary) !important;
+}
+
+.text-secondary {
+  color: var(--md-text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--md-text-secondary) !important;
+}
+
+/* Focus States - Material Design - Enhanced Visibility */
+*:focus-visible {
+  outline: 3px solid var(--md-primary) !important;
+  outline-offset: 3px !important;
+  border-radius: var(--md-radius-sm) !important;
+  box-shadow: 0 0 0 3px rgba(31, 42, 68, 0.28) !important;
+}
+
+/* Buttons Focus States - Enhanced */
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--md-primary) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 3px rgba(31, 42, 68, 0.28), 0 2px 8px rgba(31, 42, 68, 0.35) !important;
+  border-radius: var(--md-radius-sm) !important;
+}
+
+/* Links as Buttons Focus */
+a.btn:focus-visible {
+  outline: 3px solid var(--md-primary) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 3px rgba(31, 42, 68, 0.28), 0 2px 8px rgba(31, 42, 68, 0.35) !important;
+}
+
+/* RTL Support */
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+/* Navbar Brand - Logo positioning for RTL */
+[dir="rtl"] .navbar-brand {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+/* Responsive Logo - Even larger image */
+@media (max-width: 768px) {
+  .navbar-brand:not(.app-navbar__brand) img {
+    height: clamp(28px, 6vw, 40px) !important;
+  }
+
+  /* Keep our brand logo readable; do not shrink it */
+  .navbar-brand.app-navbar__brand img {
+    height: 50px !important;
+  }
+  
+  /* Ensure hamburger button and logo are aligned */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* קטן את כפתור ההמבורגר */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.1em !important;
+    height: 1.1em !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  .navbar-brand:not(.app-navbar__brand) img {
+    height: clamp(26px, 7vw, 38px) !important;
+  }
+
+  /* Keep our brand logo readable; do not shrink it */
+  .navbar-brand.app-navbar__brand img {
+    height: 50px !important;
+  }
+  
+  .navbar-toggler {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.05em !important;
+    height: 1.05em !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .navbar-brand:not(.app-navbar__brand) img {
+    height: clamp(24px, 8vw, 36px) !important;
+  }
+
+  /* Keep our brand logo readable; do not shrink it */
+  .navbar-brand.app-navbar__brand img {
+    height: 50px !important;
+  }
+  
+  .navbar-toggler {
+    padding: 0.15rem 0.35rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1em !important;
+    height: 1em !important;
+  }
+}
+
+[dir="rtl"] .btn {
+  direction: rtl;
+}
+
+/* Responsive Shadows */
+@media (max-width: 768px) {
+  .card {
+    box-shadow: 0 1px 4px var(--md-shadow-sm) !important;
+  }
+  
+  .card:hover {
+    box-shadow: 0 2px 8px var(--md-shadow-sm) !important;
+    transform: none;
+  }
+}
+
