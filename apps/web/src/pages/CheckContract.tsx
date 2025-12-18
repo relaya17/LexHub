@@ -74,8 +74,8 @@ const CheckContract: React.FC = () => {
         <body>
           <h1>דו״ח בדיקת חוזה</h1>
           <h2>סיכום</h2>
-          <pre>${(result.summary ?? '').replaceAll('<', '&lt;')}</pre>
-          ${result.issues?.length ? `<h2>סיכונים/בעיות</h2><ul>${result.issues.map((i) => `<li>${i.replaceAll('<', '&lt;')}</li>`).join('')}</ul>` : ''}
+          <pre>${(result.summary ?? '').replace(/</g, '&lt;')}</pre>
+          ${result.issues?.length ? `<h2>סיכונים/בעיות</h2><ul>${result.issues.map((i) => `<li>${i.replace(/</g, '&lt;')}</li>`).join('')}</ul>` : ''}
           <hr />
           <p style="color:#666;font-size:12px">דיסקליימר: המידע באתר הינו לצורכי מידע בלבד ואינו מהווה ייעוץ משפטי מחייב.</p>
         </body>
@@ -112,10 +112,20 @@ const CheckContract: React.FC = () => {
 
   return (
     <PageLayout>
-      <Box dir="rtl">
+      <Box dir="rtl" sx={{ maxWidth: 980, mx: 'auto' }}>
         <Typography variant="h4" textAlign="center" sx={{ mb: 1 }}>
           בדיקת חוזה חכמה
         </Typography>
+        <Box
+          sx={{
+            width: 84,
+            height: 4,
+            bgcolor: 'warning.main',
+            borderRadius: 999,
+            mx: 'auto',
+            mb: 2,
+          }}
+        />
         <Typography variant="subtitle1" textAlign="center" color="text.secondary" sx={{ mb: 3 }}>
           העלי קובץ (PDF/TXT/DOCX) או הדביקי טקסט. ניתוח זה אינו ייעוץ משפטי מחייב.
         </Typography>
@@ -146,13 +156,31 @@ const CheckContract: React.FC = () => {
           <>
             <Paper variant="outlined" sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3, mb: 2 }}>
               <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Button variant="outlined" startIcon={<PrintIcon />} onClick={handlePrint} sx={{ borderRadius: 999 }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  startIcon={<PrintIcon />}
+                  onClick={handlePrint}
+                  sx={{ borderRadius: 999 }}
+                >
                   הדפס
                 </Button>
-                <Button variant="outlined" startIcon={<DownloadIcon />} onClick={handleDownload} sx={{ borderRadius: 999 }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  startIcon={<DownloadIcon />}
+                  onClick={handleDownload}
+                  sx={{ borderRadius: 999 }}
+                >
                   הורד דו״ח
                 </Button>
-                <Button variant="outlined" startIcon={<EmailIcon />} onClick={handleEmail} sx={{ borderRadius: 999 }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  startIcon={<EmailIcon />}
+                  onClick={handleEmail}
+                  sx={{ borderRadius: 999 }}
+                >
                   שלח במייל
                 </Button>
                 <Button variant="contained" color="secondary" onClick={handleSaveOrSend} sx={{ borderRadius: 999 }}>

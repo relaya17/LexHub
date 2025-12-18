@@ -8,12 +8,12 @@ import {
   Spinner,
   Alert,
 } from 'react-bootstrap';
-import type { LawyerProfile, ApiResponse } from '@lexhub/api-client/types';
+import type { Lawyer, ApiResponse } from '@lexhub/api-client/types';
 import { getLawyers } from '@lexhub/api-client/api';
 import MarketingSection from '../components/MarketingSection';
 
 const Home: React.FC = () => {
-  const [lawyers, setLawyers] = useState<LawyerProfile[]>([]);
+  const [lawyers, setLawyers] = useState<Lawyer[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       setLoading(true);
       setError(null);
       try {
-        const response: ApiResponse<LawyerProfile[]> = await getLawyers();
+        const response: ApiResponse<Lawyer[]> = await getLawyers();
         if (response.success && response.data) {
           setLawyers(response.data.slice(0, 3));
         } else {
@@ -39,14 +39,17 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main role="main" className="page-background">
+    <main role="main" className="page-background lexhub-home">
       {/* סקשן שיווקי */}
       <MarketingSection />
 
-      <Container className="mt-3 mt-md-5 px-3 px-md-4" dir="rtl">
+      <Container fluid="lg" className="mt-4 mt-md-5 px-3 px-md-4" dir="rtl">
 
         <section className="my-4 my-md-5" aria-labelledby="recommended-lawyers-heading">
-          <h2 id="recommended-lawyers-heading" className="mb-3 mb-md-4 text-center h3 h2-md">
+          <h2
+            id="recommended-lawyers-heading"
+            className="mb-3 mb-md-4 text-center h2-md lexhub-home__sectionTitle"
+          >
             עורכי דין מומלצים
           </h2>
           {loading && (
@@ -67,36 +70,34 @@ const Home: React.FC = () => {
             </p>
           )}
           {!loading && lawyers.length > 0 && (
-            <Row className="g-3" role="list">
+            <Row className="g-3 g-md-4" role="list">
               {lawyers.map((lawyer) => (
                 <Col key={lawyer.id} xs={12} sm={6} md={4} role="listitem">
-                  <Card className="h-100 text-start">
+                  <Card className="h-100 lexhub-home__lawyerCard">
                     <Card.Body>
-                      <Card.Title as="h3">{lawyer.name}</Card.Title>
+                      <Card.Title as="h3" className="lexhub-home__lawyerName">
+                        {lawyer.name}
+                      </Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                        {lawyer.region}
+                        {lawyer.location?.city ?? ''}
                       </Card.Subtitle>
                       <Card.Text>
-                        {lawyer.specialization.join(' • ')}
-                        {lawyer.pricePerLetter && (
-                          <>
-                            <br />
-                            מחיר למכתב: {lawyer.pricePerLetter} ₪
-                          </>
-                        )}
-                        {lawyer.rating && (
-                          <>
-                            <br />
-                            <span aria-label={`דירוג ${lawyer.rating.toFixed(1)} מתוך 5`}>
-                              דירוג: {lawyer.rating.toFixed(1)} / 5
-                            </span>
-                          </>
-                        )}
+                        {lawyer.specialties.join(' • ')}
+                        <>
+                          <br />
+                          טווח מחיר: ₪{lawyer.priceRange.min} - ₪{lawyer.priceRange.max}
+                        </>
+                        <>
+                          <br />
+                          <span aria-label={`דירוג ${lawyer.rating.toFixed(1)} מתוך 5`}>
+                            דירוג: {lawyer.rating.toFixed(1)} / 5
+                          </span>
+                        </>
                       </Card.Text>
                       <Button
                         variant="primary"
                         href="/lawyers"
-                        aria-label={`צפי בפרופיל המלא של ${lawyer.name} מ-${lawyer.region}`}
+                        aria-label={`צפי בפרופיל המלא של ${lawyer.name}`}
                       >
                         צפי בפרופיל
                       </Button>

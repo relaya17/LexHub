@@ -1,15 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import matchingReducer from './slices/matchingSlice';
-import chatReducer, { type ChatState } from './slices/chatSlice';
+import chatReducer from './slices/chatSlice';
 import authReducer from './slices/authSlice';
 import { localStorageUtils } from '../utils/localStorage';
 
-type PreloadedState = {
-  chat?: ChatState;
-  auth?: unknown;
-};
-
-const preloadedChat = localStorageUtils.loadChatState<ChatState>();
+const preloadedChat = localStorageUtils.loadChatState<unknown>();
+const preloadedState = preloadedChat ? { chat: preloadedChat } : undefined;
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +13,7 @@ export const store = configureStore({
     chat: chatReducer,
     auth: authReducer,
   },
-  preloadedState: (preloadedChat ? ({ chat: preloadedChat } as PreloadedState) : undefined),
+  preloadedState,
 });
 
 store.subscribe(() => {

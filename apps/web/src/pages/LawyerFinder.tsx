@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Card, Button, Badge, Spinner, Form, Row, Col } from 'react-bootstrap';
 import { getAllLawyers, searchLawyers } from '@lexhub/api-client/lawyers';
-import type { LawyerProfile, ApiResponse } from '@lexhub/api-client/types';
+import type { Lawyer, ApiResponse } from '@lexhub/api-client/types';
 
 const LawyerFinder: React.FC = () => {
-  const [lawyers, setLawyers] = useState<LawyerProfile[]>([]);
+  const [lawyers, setLawyers] = useState<Lawyer[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
   const [filters, setFilters] = useState<{
@@ -22,7 +22,7 @@ const LawyerFinder: React.FC = () => {
   const loadLawyers = async () => {
     setLoading(true);
     try {
-      let response: ApiResponse<LawyerProfile[]>;
+      let response: ApiResponse<Lawyer[]>;
       if (
         filters.q ||
         filters.region ||
@@ -157,25 +157,21 @@ const LawyerFinder: React.FC = () => {
           <Card.Body className="text-end">
             <Card.Title>{currentLawyer.name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
-              {currentLawyer.region}
+              {currentLawyer.location?.city ?? ''}
             </Card.Subtitle>
             <div className="mb-2">
-              {currentLawyer.specialization.map((spec) => (
+              {currentLawyer.specialties.map((spec) => (
                 <Badge key={spec} bg="secondary" className="ms-1">
                   {spec}
                 </Badge>
               ))}
             </div>
-            {currentLawyer.pricePerLetter && (
-              <p className="mb-1">
-                <strong>מחיר למכתב:</strong> {currentLawyer.pricePerLetter} ₪
-              </p>
-            )}
-            {currentLawyer.rating && (
-              <p className="mb-1">
-                <strong>דירוג:</strong> {currentLawyer.rating.toFixed(1)} / 5
-              </p>
-            )}
+            <p className="mb-1">
+              <strong>טווח מחיר:</strong> ₪{currentLawyer.priceRange.min} - ₪{currentLawyer.priceRange.max}
+            </p>
+            <p className="mb-1">
+              <strong>דירוג:</strong> {currentLawyer.rating.toFixed(1)} / 5
+            </p>
           </Card.Body>
           <Card.Footer>
             <div className="d-flex justify-content-between">

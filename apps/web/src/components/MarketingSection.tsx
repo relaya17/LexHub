@@ -4,22 +4,25 @@ import { Link } from 'react-router-dom';
 
 const MarketingSection: React.FC = () => {
   return (
-    <section className="py-3 py-md-4 lexhub-hero" dir="rtl">
-      <Container>
+    <section className="py-4 py-md-5 lexhub-hero" dir="rtl">
+      <Container fluid="lg" className="px-3 px-md-4">
         <div className="mx-auto text-center" style={{ maxWidth: 920 }}>
           <p
-            className="mb-2 text-center text-uppercase"
+            className="mb-2 text-center text-uppercase lexhub-hero__tagline"
             dir="ltr"
             style={{ color: 'var(--md-primary)', fontWeight: 700, letterSpacing: '0.06em' }}
           >
             Legal. Smart. Personal.
           </p>
 
-          <h1 className="mb-3 mb-md-4 h3 h2-md h1-md text-center" style={{ color: 'var(--md-primary)', fontWeight: 800 }}>
+          <h1
+            className="mb-3 mb-md-4 text-center lexhub-hero__headline"
+            style={{ color: 'var(--md-primary)', fontWeight: 800 }}
+          >
             <span className="lexhub-hero__title">הדור הבא של השירותים המשפטיים</span>
           </h1>
 
-          <p className="mb-3 mb-md-4 text-center" style={{ color: 'var(--md-text-body)' }}>
+          <p className="mb-3 mb-md-4 text-center lexhub-hero__lead" style={{ color: 'var(--md-text-body)' }}>
             המרכז החכם לשירותים משפטיים מותאמים אישית –
             <br />
             התאמה מדויקת בין לקוח לעורך דין, כתיבת מכתבים משפטיים ובדיקת חוזים, הכל במקום אחד וללא פגישות מיותרות.
@@ -31,7 +34,7 @@ const MarketingSection: React.FC = () => {
               <Link
                 to="/lawyers"
                 role="button"
-                className="btn btn-success px-3 px-md-4 py-2 py-md-2 w-100 w-md-auto"
+                className="btn btn-success px-3 px-md-4 py-2 py-md-3 w-100 w-md-auto lexhub-hero__cta"
                 aria-label="מצא עורך דין עכשיו"
               >
                 מצא עורך דין עכשיו
@@ -39,7 +42,7 @@ const MarketingSection: React.FC = () => {
               <Link
                 to="/write-letter"
                 role="button"
-                className="btn btn-outline-success px-3 px-md-4 py-2 py-md-2 w-100 w-md-auto"
+                className="btn btn-outline-success px-3 px-md-4 py-2 py-md-3 w-100 w-md-auto lexhub-hero__cta"
                 aria-label="כתוב מכתב משפטי"
               >
                 כתוב מכתב משפטי
@@ -47,7 +50,7 @@ const MarketingSection: React.FC = () => {
               <Link
                 to="/contract-review"
                 role="button"
-                className="btn btn-outline-success px-3 px-md-4 py-2 py-md-2 w-100 w-md-auto"
+                className="btn btn-outline-success px-3 px-md-4 py-2 py-md-3 w-100 w-md-auto lexhub-hero__cta"
                 aria-label="בדוק חוזה בקליק"
               >
                 בדוק חוזה בקליק

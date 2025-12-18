@@ -222,6 +222,12 @@ body {
   padding-bottom: 0.35rem;
 }
 
+.lexhub-hero__headline {
+  font-size: clamp(2.05rem, 3.1vw, 3.1rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
 .lexhub-hero__title::after {
   content: "";
   position: absolute;
@@ -234,6 +240,22 @@ body {
   border-radius: 999px;
   background: var(--md-accent);
   opacity: 0.95;
+}
+
+.lexhub-hero__tagline {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .lexhub-hero__tagline {
+    font-size: 1.35rem;
+  }
+}
+
+/* Hero lead text should scale proportionally with the headline */
+.lexhub-hero__lead {
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+  line-height: 1.8;
 }
 
 .lexhub-hero__pill {
@@ -270,6 +292,40 @@ body {
 .lexhub-hero__cardTitle {
   color: var(--md-primary);
   font-weight: 700;
+}
+
+/* Home (medium screens) - slightly larger + less cramped */
+.lexhub-home__sectionTitle {
+  font-weight: 800;
+  color: var(--md-primary);
+}
+
+.lexhub-home__lawyerName {
+  font-weight: 800;
+  color: var(--md-text-primary);
+}
+
+.lexhub-home__lawyerCard .card-body {
+  padding: 1.1rem;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .lexhub-hero__lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .lexhub-hero__cta {
+    font-size: 1.02rem;
+  }
+
+  .lexhub-home__lawyerCard .card-body {
+    padding: 1.25rem;
+  }
+
+  .lexhub-home__lawyerName {
+    font-size: 1.2rem;
+  }
 }
 
 /* Modal */

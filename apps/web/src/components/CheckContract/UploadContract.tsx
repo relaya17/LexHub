@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Alert, Box, Button, CircularProgress, Divider, Typography } from '@mui/material';
+import { Alert, Box, Button, CircularProgress, Divider, Paper, Typography } from '@mui/material';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import { alpha } from '@mui/material/styles';
 import { contractsApi } from '../../api/contracts';
 
 export interface UploadContractProps {
@@ -45,34 +46,166 @@ const UploadContract: React.FC<UploadContractProps> = ({ onUpload }) => {
 
   return (
     <Box dir="rtl" sx={{ mb: 3 }}>
-      <Typography variant="h6" sx={{ textAlign: 'right', mb: 1 }}>
-        העלאה / סריקה
-      </Typography>
-
       {error && (
         <Alert severity="error" sx={{ mb: 2, textAlign: 'right' }}>
           {error}
         </Alert>
       )}
 
-      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Button
-          variant="outlined"
-          startIcon={<UploadFileIcon />}
+      {/* Top actions (responsive tiles) */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+          gap: 1.5,
+          mb: 2,
+        }}
+      >
+        <Paper
+          component="button"
+          type="button"
           onClick={handlePickFile}
           disabled={busy}
-          sx={{ borderRadius: 999 }}
-        >
-          העלאת קובץ (PDF/TXT/DOCX)
-        </Button>
-        <Button
           variant="outlined"
-          startIcon={<CameraAltIcon />}
+          sx={(t) => ({
+            textAlign: 'right',
+            borderRadius: 12,
+            p: 2,
+            cursor: busy ? 'not-allowed' : 'pointer',
+            opacity: busy ? 0.7 : 1,
+            borderColor: 'divider',
+            transition: 'border-color 160ms ease, background-color 160ms ease, transform 160ms ease',
+            '&:hover': busy
+              ? undefined
+              : {
+                  borderColor: 'primary.main',
+                  backgroundColor: alpha(t.palette.primary.main, 0.06),
+                  transform: 'translateY(-1px)',
+                },
+          })}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box
+              sx={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                bgcolor: 'primary.main',
+                color: 'common.white',
+                display: 'grid',
+                placeItems: 'center',
+                flex: '0 0 auto',
+              }}
+              aria-hidden="true"
+            >
+              <UploadFileIcon />
+            </Box>
+            <Box sx={{ minWidth: 0 }}>
+              <Typography sx={{ fontWeight: 800, color: 'text.primary' }}>העלאת קובץ</Typography>
+              <Typography variant="body2" color="text.secondary">
+                PDF / TXT / DOCX
+              </Typography>
+            </Box>
+            {busy && (
+              <Box sx={{ mr: 'auto' }}>
+                <CircularProgress size={18} />
+              </Box>
+            )}
+          </Box>
+        </Paper>
+
+        <Paper
+          component="button"
+          type="button"
           onClick={handlePickCamera}
           disabled={busy}
-          sx={{ borderRadius: 999 }}
+          variant="outlined"
+          sx={(t) => ({
+            textAlign: 'right',
+            borderRadius: 12,
+            p: 2,
+            cursor: busy ? 'not-allowed' : 'pointer',
+            opacity: busy ? 0.7 : 1,
+            borderColor: 'divider',
+            transition: 'border-color 160ms ease, background-color 160ms ease, transform 160ms ease',
+            '&:hover': busy
+              ? undefined
+              : {
+                  borderColor: 'warning.main',
+                  backgroundColor: alpha(t.palette.warning.main, 0.08),
+                  transform: 'translateY(-1px)',
+                },
+          })}
         >
-          צילום/סריקה (מובייל)
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box
+              sx={{
+                width: 44,
+                height: 44,
+                borderRadius: 10,
+                bgcolor: 'warning.main',
+                color: 'common.white',
+                display: 'grid',
+                placeItems: 'center',
+                flex: '0 0 auto',
+              }}
+              aria-hidden="true"
+            >
+              <CameraAltIcon />
+            </Box>
+            <Box sx={{ minWidth: 0 }}>
+              <Typography sx={{ fontWeight: 800, color: 'text.primary' }}>צילום / סריקה</Typography>
+              <Typography variant="body2" color="text.secondary">
+                מובייל (ללא OCR כרגע)
+              </Typography>
+            </Box>
+          </Box>
+        </Paper>
+      </Box>
+
+      <Divider sx={{ my: 2 }} />
+
+      <Typography
+        variant="subtitle2"
+        sx={{ textAlign: 'center', mb: 1, fontWeight: 800, color: 'text.primary' }}
+      >
+        או הדביקי טקסט
+      </Typography>
+
+      <Box
+        component="textarea"
+        value={text}
+        onChange={(e) => setText(e.currentTarget.value)}
+        placeholder="הדביקי כאן את טקסט החוזה…"
+        style={{
+          width: '100%',
+          minHeight: 220,
+          resize: 'vertical',
+          direction: 'rtl',
+          textAlign: 'right',
+          padding: 12,
+          borderRadius: 12,
+          border: '1px solid #E0DED8',
+          fontFamily: 'inherit',
+        }}
+      />
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleUseText}
+          disabled={busy || text.trim().length === 0}
+          sx={{ borderRadius: 999, minWidth: 160 }}
+        >
+          {busy ? (
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <CircularProgress size={18} color="inherit" />
+              טוען…
+            </Box>
+          ) : (
+            'המשך'
+          )}
         </Button>
       </Box>
 
@@ -102,48 +235,6 @@ const UploadContract: React.FC<UploadContractProps> = ({ onUpload }) => {
           e.currentTarget.value = '';
         }}
       />
-
-      <Divider sx={{ my: 2 }} />
-
-      <Typography variant="subtitle2" sx={{ textAlign: 'right', mb: 1 }}>
-        או הדביקי טקסט
-      </Typography>
-
-      <Box
-        component="textarea"
-        value={text}
-        onChange={(e) => setText(e.currentTarget.value)}
-        placeholder="הדביקי כאן את טקסט החוזה…"
-        style={{
-          width: '100%',
-          minHeight: 220,
-          resize: 'vertical',
-          direction: 'rtl',
-          textAlign: 'right',
-          padding: 12,
-          borderRadius: 12,
-          border: '1px solid #E0DED8',
-          fontFamily: 'inherit',
-        }}
-      />
-
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-        <Button
-          variant="contained"
-          onClick={handleUseText}
-          disabled={busy || text.trim().length === 0}
-          sx={{ borderRadius: 999, minWidth: 160 }}
-        >
-          {busy ? (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <CircularProgress size={18} color="inherit" />
-              טוען…
-            </Box>
-          ) : (
-            'המשך'
-          )}
-        </Button>
-      </Box>
     </Box>
   );
 };

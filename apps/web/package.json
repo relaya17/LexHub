@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm -r --filter @lexhub/ui --filter @lexhub/api-client build && vite",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "pnpm -r --filter @lexhub/ui --filter @lexhub/api-client build && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@lexhub/api-client": "workspace:*",
     "@lexhub/templates": "workspace:*",
     "@lexhub/types": "workspace:*",
+    "@lexhub/ui": "workspace:*",
     "@mui/icons-material": "^7.3.6",
     "@mui/material": "^7.3.6",
     "@react-spring/web": "^10.0.3",
