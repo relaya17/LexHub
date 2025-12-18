@@ -77,7 +77,7 @@ const CheckContract: React.FC = () => {
           <pre>${(result.summary ?? '').replace(/</g, '&lt;')}</pre>
           ${result.issues?.length ? `<h2>סיכונים/בעיות</h2><ul>${result.issues.map((i) => `<li>${i.replace(/</g, '&lt;')}</li>`).join('')}</ul>` : ''}
           <hr />
-          <p style="color:#666;font-size:12px">דיסקליימר: המידע באתר הינו לצורכי מידע בלבד ואינו מהווה ייעוץ משפטי מחייב.</p>
+          <p style="color:#666;font-size:12px">הבהרה משפטית: המידע באתר הינו לצורכי מידע בלבד ואינו מהווה ייעוץ משפטי מחייב.</p>
         </body>
       </html>
     `;

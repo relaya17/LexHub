@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
       <Divider sx={{ mb: 2 }} />
 
       <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 1 }}>
-        דיסקליימר: המידע באתר הינו לצורכי מידע בלבד ואינו מהווה ייעוץ משפטי מחייב.
+        הבהרה משפטית: המידע באתר הינו לצורכי מידע בלבד ואינו מהווה ייעוץ משפטי מחייב.
       </Typography>
 
       <Typography variant="body2" textAlign="center" sx={{ mb: 1 }}>
