@@ -8,11 +8,14 @@ const MarketingSection: React.FC = () => {
       <Container fluid="lg" className="px-3 px-md-4">
         <div className="mx-auto text-center" style={{ maxWidth: 920 }}>
           <p
-            className="mb-2 text-center text-uppercase lexhub-hero__tagline"
+            className="mb-2 text-center lexhub-hero__tagline"
             dir="ltr"
-            style={{ color: 'var(--md-primary)', fontWeight: 700, letterSpacing: '0.06em' }}
           >
-            Legal. Smart. Personal.
+            Legal.
+            <br />
+            Smart.
+            <br />
+            Personal.
           </p>
 
           <h1
