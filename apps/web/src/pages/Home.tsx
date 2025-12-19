@@ -65,9 +65,11 @@ const Home: React.FC = () => {
             </Alert>
           )}
           {!loading && !error && lawyers.length === 0 && (
-            <p className="text-muted text-start" role="status">
-              עדיין לא נוספו עורכי דין. חזורי מאוחר יותר או חפשי ידנית במסך &quot;מצא עורך דין&quot;.
-            </p>
+            <div className="d-flex justify-content-center">
+              <p className="text-muted lexhub-home__emptyState" role="status">
+                עדיין לא נוספו עורכי דין. חזורי מאוחר יותר או חפשי ידנית במסך &quot;מצא עורך דין&quot;.
+              </p>
+            </div>
           )}
           {!loading && lawyers.length > 0 && (
             <Row className="g-3 g-md-4" role="list">
