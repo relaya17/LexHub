@@ -93,15 +93,9 @@ importers:
       bootstrap:
         specifier: ^5.3.3
         version: 5.3.8(@popperjs/core@2.11.8)
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
       react-bootstrap:
         specifier: ^2.10.4
         version: 2.10.10(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: ^9.2.0
         version: 9.2.0(@types/react@18.3.27)(react@18.3.1)(redux@5.0.1)
@@ -116,10 +110,10 @@ importers:
         version: 2.1.1(stylis@4.3.6)
     devDependencies:
       '@types/react':
-        specifier: ^18.3.5
+        specifier: ^18.3.27
         version: 18.3.27
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.27)
       '@types/react-router-dom':
         specifier: ^5.3.3
@@ -127,6 +121,12 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^5.1.2
         version: 5.1.2(vite@7.3.0(@types/node@22.19.3)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.2))
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
@@ -149,10 +149,19 @@ importers:
   packages/types: {}
 
   packages/ui:
-    dependencies:
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      '@types/react-dom':
+        specifier: ^18.3.7
+        version: 18.3.7(@types/react@19.2.7)
       react:
-        specifier: ^18.0.0
+        specifier: ^18.3.1
         version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
 
   server:
     dependencies:
@@ -2212,6 +2221,9 @@ packages:
 
   '@types/react@18.3.27':
     resolution: {integrity: sha512-cisd7gxkzjBKU2GgdYrTdtQx1SORymWyaAFhaxQPK9bYO9ot3Y5OikQRvY0VYQtvwjeQnizCINJAenh/V7MK2w==}
+
+  '@types/react@19.2.7':
+    resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
 
   '@types/send@0.17.6':
     resolution: {integrity: sha512-Uqt8rPBE8SY0RK8JB1EzVOIZ32uqy8HwdxCnoCOsYrvnswqmFZ/k+9Ikidlk/ImhsdvBsloHbAlewb2IEBV/Og==}
@@ -8430,6 +8442,10 @@ snapshots:
     dependencies:
       '@types/react': 18.3.27
 
+  '@types/react-dom@18.3.7(@types/react@19.2.7)':
+    dependencies:
+      '@types/react': 19.2.7
+
   '@types/react-native@0.73.0(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(react@18.3.1)':
     dependencies:
       react-native: 0.73.11(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(react@18.3.1)
@@ -8460,6 +8476,10 @@ snapshots:
   '@types/react@18.3.27':
     dependencies:
       '@types/prop-types': 15.7.15
+      csstype: 3.2.3
+
+  '@types/react@19.2.7':
+    dependencies:
       csstype: 3.2.3
 
   '@types/send@0.17.6':
